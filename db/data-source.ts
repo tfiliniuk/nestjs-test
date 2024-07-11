@@ -3,15 +3,15 @@ import {
   TypeOrmModuleAsyncOptions,
   TypeOrmModuleOptions,
 } from '@nestjs/typeorm';
-import * as dotenv from 'dotenv';
-import * as fs from 'fs';
+// import * as dotenv from 'dotenv';
+// import * as fs from 'fs';
 import { Artist } from 'src/artists/artist.entity';
 import { Playlist } from 'src/playlists/playlist.entity';
 import { Song } from 'src/songs/song.entity';
 import { User } from 'src/users/user.entity';
 import { DataSource, DataSourceOptions } from 'typeorm';
 
-const data: any = dotenv.parse(fs.readFileSync(`.env`));
+// const data: any = dotenv.parse(fs.readFileSync(`.env`));
 
 export const typeOrmAsyncConfig: TypeOrmModuleAsyncOptions = {
   imports: [ConfigModule],
