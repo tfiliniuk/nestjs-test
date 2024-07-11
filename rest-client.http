@@ -1,0 +1,131 @@
+### SEND FETCH SONGS REQUEST
+GET http://localhost:3000/songs
+
+### SEND FETCH SONGS REQUEST WITH PAGINATION
+GET http://localhost:3000/songs/?page=3&limit=2
+
+### FIND SONG BY ID
+GET http://localhost:3000/songs/3
+
+### CREATE SONG
+POST http://localhost:3000/songs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imdhcml4QGdtYWlsLmNvbSIsInVzZXJJZCI6MiwiYXJ0aXN0SWQiOjEsImlhdCI6MTcyMDE3MjQxMCwiZXhwIjoxNzIyNzY0NDEwfQ.zNEnosnrhMhBuW8n1Vj6_Zs5W0L3JW2iRXn6EooNGEQ
+
+{
+    "title": "New Song 4",
+    "artists": [1],
+    "releasedDate": "2022-09-29",
+    "duration": "02:34",
+    "lyrics": "Some new Lyrics111122222eeqweqw",
+    "playlistId": 1
+}
+
+### UPDATE SONG BY ID
+PUT http://localhost:3000/songs/1
+Content-Type: application/json
+
+{
+    "title": "Lasting Lover2 AAAA",
+    "releasedDate": "2022-09-29",
+    "duration": "02:34",
+    "lyrics": "Some new Lyrics"
+    
+}
+
+### DELETE SONG BY ID
+DELETE http://localhost:3000/songs/2
+
+
+### Create new playlist
+POST http://localhost:3000/playlists
+Content-Type: application/json
+
+{
+    "name": "Feel Good Now",
+    "songs": [
+        1
+    ],
+    "user": 1
+}
+
+
+
+### SUGNUP USER
+
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@gmail.com",
+    "password": "123456"
+}
+
+### SUGNUP ARTIST
+
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "firstName": "Martin",
+    "lastName": "Garrix",
+    "email": "garix@gmail.com",
+    "password": "123456"
+}
+
+
+### LOGIN ARTIST
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "john@gmail.com",
+    "password": "123456"
+}
+
+
+
+### LOGIN USER
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "john@gmail.com",
+    "password": "123456"
+}
+
+
+
+### GET PROFILE
+GET http://localhost:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imdhcml4QGdtYWlsLmNvbSIsInVzZXJJZCI6MiwiYXJ0aXN0SWQiOjEsImlhdCI6MTcyMDE3MjI3MywiZXhwIjoxNzIyNzY0MjczfQ.KwPHbZlzXwXeMY7AQRgXbNw19UfZk7I9pa4eH13jv6E
+
+### ENABLE 2FA
+GET http://localhost:3000/auth/enable-2fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3MjAxNzg0NjUsImV4cCI6MTcyMjc3MDQ2NX0.0yHA9X6O9qp5Z8mtp5DvkDEmmRCAZcgNAX7OmDPh-TQ
+
+### VALIDATE 2FA TOKEN
+POST http://localhost:3000/auth/validate-2fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3MjAxNzg0NjUsImV4cCI6MTcyMjc3MDQ2NX0.0yHA9X6O9qp5Z8mtp5DvkDEmmRCAZcgNAX7OmDPh-TQ
+Content-Type: application/json
+
+{
+    "token": "165210"
+}
+
+### DISABLE 2FA TOKEN
+GET http://localhost:3000/auth/disable-2fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3MjAxNzg0NjUsImV4cCI6MTcyMjc3MDQ2NX0.0yHA9X6O9qp5Z8mtp5DvkDEmmRCAZcgNAX7OmDPh-TQ
+
+
+### ACCESS PROFILE WITH API KEY
+GET http://localhost:3000/auth/profile
+Authorization: Bearer 8c8621d3-26e6-4dc6-8376-15ab7cc87dfc
+
+
+### TEST ENV VARIABLE
+GET http://localhost:3000/auth/test
